@@ -1,49 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import Main from "../Main/Main";
 
 const Mains = () => {
-    return (
+  const [mains, setMains] = useState([]);
+  useEffect(() => {
+    fetch("Data.json")
+      .then((res) => res.json())
+      .then((data) => setMains(data));
+  }, []);
+  console.log(mains); 
+  return (
+    <div>
+      <div className="max-w-screen-2xl mx-auto ">
         <div>
-            <div className='max-w-screen-2xl mx-auto '>
-                <div className='w-70%'>
-
-                    <h1 className='text-[#0E2954] text-3xl font-medium mt-36'>Active Auctions</h1>
-                    <p className='text-black'>Discover and bid on extraordinary items</p>
-                    <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
-                        <table className="table">
-                            {/* head */}
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Items</th>
-                                    <th>Current Bid</th>
-                                    <th>Time Left</th>
-                                    <th>Bid Now</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {/* row 1 */}
-                                <tr>
-                                    <th><img src="" alt="" /></th>
-                                    <td>Cy Ganderton Discover and bid on extraordinary items</td>
-                                    <td>Quality Control Specialist</td>
-                                    <td>Blue</td>
-                                    <td>
-                                        <div className="tooltip" data-tip="hello">
-                                            <button className="btn rating gap-1"><input type="radio" name="rating-3" className="mask mask-heart bg-red-400" aria-label="1 star" /></button>
-                                        </div>
-                                        <div className="">
-                                            
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+          <h1 className="text-[#0E2954] text-3xl font-medium mt-36">
+            Active Auctions
+          </h1>
+          <p className="text-black text-xl mt-5 mb-9">
+            Discover and bid on extraordinary items
+          </p>
+          <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
+            <table className="table min-w-full text-left text-sm font-medium">
+              {/* head */}
+              <thead>
+                <tr>
+                  
+                  <th className="px-6 py-4 ml-5">Items</th>
+                  <th className="px-6 py-4 ml-5">Current Bid</th>
+                  <th className="px-6 py-4 ml-5">Time Left</th>
+                  <th className="px-6 py-4 ml-5">Bid Now</th>
+                </tr>
+              </thead>
+              <tbody>
+                {/* row 1 */}
+                {mains.map((main) => <Main main={main}>
+                    
+                </Main>)}
+              </tbody>
+            </table>
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default Mains;

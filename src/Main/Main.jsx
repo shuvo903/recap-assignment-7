@@ -1,46 +1,30 @@
-import React from 'react';
+import React from "react";
 
-const Main = () => {
-    return (
-   <div>
-    <div className="overflow-x-auto">
-  <table className="table">
-    {/* head */}
-    <thead>
-      <tr>
-        <th></th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+const Main = ({ main }) => {
+  console.log(main)
+  return (
+    <div>
+      <tr className="border-b border-gray-200 hover:bg-gray-50 transition duration-200">
+        <td className="w-[50%] px-4  flex items-center gap-3 text-sm text-gray-700"><img src={main.image} alt="" /></td>
+        <td>{main.title}</td>
+        <td>{main.price}</td>
+        <td>{main.timeLeft}</td>
+        <td>
+          <div className="tooltip" data-tip="hello">
+            <button className="btn rating gap-1">
+              <input
+                type="radio"
+                name="rating-3"
+                className="mask mask-heart bg-red-400"
+                aria-label="1 star"
+              />
+            </button>
+          </div>
+          <div className=""></div>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
-      {/* row 2 */}
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      {/* row 3 */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-   </div>
-    );
+    </div>
+  );
 };
 
 export default Main;
