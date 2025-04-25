@@ -8,7 +8,7 @@ const Banner = () => {
           backgroundImage: "url(https://i.ibb.co.com/cKKn5tyb/Banner-min.jpg)",
         }}
       >
-        <div className="text-white justify-start w-full ml-48  text-left">
+        <div className="max-w-screen-2xl mx-auto text-white w-full text-left">
           <h1 className="text-5xl font-bold ">
             Bid on Unique Items from <br /> Around the World
           </h1>

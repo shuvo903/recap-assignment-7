@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="max-w-screen-2xl mx-auto">
       <div className="navbar bg-base-100 shadow-sm">
         <div className="flex-1 flex justify-between items-center text-center">
           <a className="btn btn-ghost text-xl"><span className="text-3xl text-[#003EA4] font-medium">Auction</span><span className="text-3xl font-extrabold text-[#FFD337]" >Gallery</span></a>

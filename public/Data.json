@@ -1,0 +1,72 @@
+[
+    {
+      "id": 1,
+      "title": "Vintage Leica M3 Camera",
+      "description": "",
+      "currentBidPrice": "$2,850",
+      "price": 2850,
+      "timeLeft": "2 Days left",
+      "bidsCount": 12,
+      "image": "https://i.ibb.co.com/Lz7FfpCg/Bid1-min.png"
+    },
+    {
+      "id": 2,
+      "title": "1965 Gibson SG Standard Electric ",
+      "description": "Guitar",
+      "currentBidPrice": "$6,700",
+      "price": 6700,
+      "timeLeft": "3 Days left",
+      "bidsCount": 8,
+      "image": "https://i.ibb.co.com/ynNb0Mbt/Bid2-min.png"
+    },
+    {
+      "id": 3,
+      "title": "Original Apple Macintosh 128K ",
+      "description": "(1984)",
+      "currentBidPrice": "$4,200",
+      "price": 4200,
+      "timeLeft": "1 Days left",
+      "bidsCount": 15,
+      "image": "https://i.ibb.co.com/b5YhTs4v/Bid3-min.png"
+    },
+    {
+      "id": 4,
+      "title": "Rolex Submariner 16610",
+      "description": "",
+      "currentBidPrice": "$5,900",
+      "price": 5900,
+      "timeLeft": "12 hours left",
+      "bidsCount": 5,
+      "image": "https://i.ibb.co.com/KxFxdxRD/Bid4-min.png"
+    },
+    {
+      "id": 5,
+      "title": "First Edition 'The Great Gatsby' by F. ",
+      "description": "Scott Fitzgerald",
+      "currentBidPrice": "$12,500",
+      "price": 12500,
+      "timeLeft": "5 Days left",
+      "bidsCount": 10,
+      "image": "https://i.ibb.co.com/gLWyN3KT/Bid5-min.png"
+    },
+    {
+      "id": 6,
+      "title": "Mid-Century Modern Eames Lounge ",
+      "description": "Chair",
+      "currentBidPrice": "$3,800",
+      "price": 3800,
+      "timeLeft": "8 hours left",
+      "bidsCount": 20,
+      "image": "https://i.ibb.co.com/2YLCDdXM/Bid6-min.png"
+    },
+    {
+      "id": 7,
+      "title": "Banksy Original Screen Print",
+      "description": "",
+      "currentBidPrice": "$24,500",
+      "price": 24500,
+      "timeLeft": "4 Days left",
+      "bidsCount": 17,
+      "image": "https://i.ibb.co.com/trbLySd/Bid7-min.png"
+    }
+  ]
