@@ -1,11 +1,15 @@
-import React from 'react';
+
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
 import Banner from './Banner/Banner';
-import Main from './Main/Main';
 import Mains from './Mains/Mains';
+import { MdFavoriteBorder } from "react-icons/md";
+import { useState } from 'react';
 
 const App = () => {
+
+  const [favoriteItems,setFavoriteItems] = useState()
+  
   return (
     <div  className='bg-[#EDF0F5]'>
       <Navbar></Navbar>
@@ -30,7 +34,10 @@ const App = () => {
       </div>
         <div className='right-container w-[30%] mt-64 '>
         <div className='bg-white rounded-3xl p-8 text-center '>
-          <h2 className='text-[#0E2954] text-3xl font-medium text-center mb-4 '> Favorite Items</h2>
+          <div className="flex justify-center items-center">
+          <h2 className='text-[#0E2954] text-3xl font-medium text-center mb-4 mr-3'><MdFavoriteBorder /></h2>
+          <h2  className='text-[#0E2954] text-3xl font-medium text-center mb-4 '>Favorite Items</h2>
+          </div>
           <p className='border-b border-gray-300'></p>
          <div className="text-center"> 
           <h4 className='text-3xl font-medium text-black mt-12 mb-6'>No favorites yet</h4>
