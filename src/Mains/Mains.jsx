@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Main from "../Main/Main";
 
-const Mains = ({}) => {
+const Mains = ({handleBookMark,handleAddPrice,handleRemoveFavoriteItems}) => {
   const [mains, setMains] = useState([]);
   useEffect(() => {
     fetch("Data.json")
@@ -29,10 +29,12 @@ const Mains = ({}) => {
                 </tr>
                 
               </thead>
+              
               <tbody className="divide-y divide-gray-200">
                 {/* row 1 */}
                 {mains.map((main) => (
-                  <Main main={main}></Main>
+                  <Main main={main} key={main.id} handleBookMark={handleBookMark} handleAddPrice={handleAddPrice}
+                  handleRemoveFavoriteItems={handleRemoveFavoriteItems}></Main>
                 ))}
               </tbody>
               

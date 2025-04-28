@@ -1,23 +1,14 @@
 import React, { useState } from "react";
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
-import { ToastContainer, toast } from 'react-toastify';
-const Main = ({ main }) => {
-
-  const [btnDisable, setBtnDisable,] = useState(false);
-
-  const notify = () => {
-    toast(<p className="text-[14px] text-center font-bold">Item Added Toy Your Favorite List</p>)
-  }
+const Main = ({ main , handleBookMark,handleAddPrice,handleRemoveFavoriteItems}) => {
+  
+  const [btnDisable, setBtnDisable] = useState(false);
 
   const handleBtnDisable = () => {
-    setBtnDisable(!btnDisable)
-
-
-
-  }
+    setBtnDisable(!btnDisable);
+  };
   return (
-
     <tr className="border-b border-gray-300 hover:bg-gray-50 transition duration-200">
       <td className="px-4 py-3 flex items-center gap-3 text-sm text-gray-700">
         <img
@@ -37,22 +28,39 @@ const Main = ({ main }) => {
       </td>
       <td className="px-4 py-3 text-center text-3xl text-[#0E2954] font-semibold">
         <div>
-          {
-            btnDisable && <div>
-              <button className="hover:cursor-not-allowed tooltip text-red-500" data-tip="Bookmark 🚫"><MdFavorite /></button>
+          {btnDisable && (
+            <div>
+              <button
+                className="hover:cursor-not-allowed tooltip text-red-500"
+                data-tip="Bookmark 🚫"
+              >
+                <MdFavorite />
+              </button>
             </div>
-          }
-          <button className={`hover:cursor-pointer  hover:text-red-500  ${btnDisable ? "hover:cursor-not-allowed tooltip text-red-500 hidden" : ""}`} onClick={() => {
-            handleBtnDisable()
-            notify()
-          }
+          )}
 
-          }> <MdFavoriteBorder /> <ToastContainer />
+          <button
+            className={`hover:cursor-pointer  hover:text-red-500  ${
+   btnDisable
+       ? "hover:cursor-not-allowed tooltip text-red-500 hidden"
+                : ""
+            }`}
+            onClick={() => {
+              handleBtnDisable();
+              handleBookMark(main);
+              handleAddPrice(main.price);
+              handleRemoveFavoriteItems(main.id)
+             
+            }}
+          >
+            <MdFavoriteBorder />
           </button>
         </div>
+        
       </td>
+      
     </tr>
-
+    
   );
 };
 
