@@ -1,4 +1,5 @@
 import Navbar from "./Navbar/Navbar";
+import './App.css'
 import Footer from "./Footer/Footer";
 import Banner from "./Banner/Banner";
 import Mains from "./Mains/Mains";
