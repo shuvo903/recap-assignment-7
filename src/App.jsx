@@ -1,5 +1,5 @@
 import Navbar from "./Navbar/Navbar";
-import './App.css'
+import "./App.css";
 import Footer from "./Footer/Footer";
 import Banner from "./Banner/Banner";
 import Mains from "./Mains/Mains";
@@ -13,13 +13,15 @@ const App = () => {
 
   const [bookMark, setBookMark] = useState([]);
 
-  const [removeFavoriteItems, setRemoveFavoriteItems] = useState(0);
-
-  const handleRemoveFavoriteItems = (id) => {
+  const handleRemoveFavoriteItems = (id,price) => {
     console.log(id);
-    setRemoveFavoriteItems(removeFavoriteItems);
+    const filterItem = bookMark.filter((item) => item.id != id);
+    setBookMark(filterItem);
+    const mainusItemsPrice = (totalAmount - price);
 
-    toast.warn('Remove Items to Favorite Items', {
+    setTotalAmount (mainusItemsPrice)
+
+    toast.warn("Remove Items to Favorite Items", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -28,13 +30,15 @@ const App = () => {
       draggable: true,
       progress: undefined,
       theme: "light",
-      });
+    });
+    
   };
 
   const handleAddPrice = (price) => {
     const TotalBidsAmount = totalAmount + price;
 
     setTotalAmount(TotalBidsAmount);
+
   };
   const handleBookMark = (main) => {
     setBookMark([...bookMark, main]);
@@ -83,38 +87,43 @@ const App = () => {
 
             <p className="border-b border-gray-300"></p>
             <div className="text-center">
-                <div className="">
-                  {bookMark.map((marked) => (
-                    <tr className="hover:bg-gray-50 transition duration-200 flex  text-left items-center p-3 rounded-3xl gap-4 mt-8 border-2 border-black">
-                      <div>
-                        <td className="items-center text-gray-700">
-                          <img
-                            className="h-24 w-24 p-2 rounded-2xl border-2 object-cover"
-                            src={marked.image}
-                            alt=""
-                          />
-                        </td>
-                      </div>
-                      <div>
-                        <td className="flex text-[#0E2954] font-bold ">
-                          {marked.title}
-                        </td>
-                        <td className=" flex text-center text-xl text-[#0E2954] font-semibold">
-                          {marked.currentBidPrice}
-                        </td>
+              <div className="">
+                {bookMark.map((marked) => (
+                  <tr className="hover:bg-gray-50 transition duration-200 flex  text-left items-center p-3 rounded-3xl gap-4 mt-8 border-2 border-black">
+                    <div>
+                      <td className="items-center text-gray-700">
+                        <img
+                          className="h-24 w-24 p-2 rounded-2xl border-2 object-cover"
+                          src={marked.image}
+                          alt=""
+                        />
+                      </td>
+                    </div>
+                    <div>
+                      <td className="flex text-[#0E2954] font-bold ">
+                        {marked.title}
+                      </td>
+                      <td className=" flex text-center text-xl text-[#0E2954] font-semibold">
+                        {marked.currentBidPrice}
+                      </td>
 
-                        <td className="text-center text-xl  text-[#0E2954] font-semibold">
-                          Bids: {marked.bidsCount}
-                        </td>
-                      </div>
-                      <div>
-                        <button className=" " onClick={() => handleRemoveFavoriteItems()}></button>
-                      <HiX  size={43} className="hover:text-red-500" />
-                      </div>
-                    </tr>
-                  ))};
-                </div>
-
+                      <td className="text-center text-xl  text-[#0E2954] font-semibold">
+                        Bids: {marked.bidsCount}
+                      </td>
+                    </div>
+                    <div>
+                      <button
+                        className=" "
+                        onClick={() => handleRemoveFavoriteItems(marked.id)}
+                      >
+                        <HiX size={43} className="hover:text-red-500" />
+                        
+                      </button>
+                    </div>
+                  </tr>
+                ))}
+                ;
+              </div>
 
               <div className={`${bookMark.length > 0 && "hidden "}`}>
                 <h4 className="text-3xl font-medium text-black mt-12 mb-6">

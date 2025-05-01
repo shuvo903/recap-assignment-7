@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
-const Main = ({ main , handleBookMark,handleAddPrice,handleRemoveFavoriteItems}) => {
+const Main = ({ main , handleBookMark,handleAddPrice}) => {
   
   const [btnDisable, setBtnDisable] = useState(false);
 
@@ -49,7 +49,7 @@ const Main = ({ main , handleBookMark,handleAddPrice,handleRemoveFavoriteItems})
               handleBtnDisable();
               handleBookMark(main);
               handleAddPrice(main.price);
-              handleRemoveFavoriteItems(main.id)
+
              
             }}
           >
